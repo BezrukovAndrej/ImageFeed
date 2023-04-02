@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9125876829D9944400313BFC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125876729D9944400313BFC /* Constants.swift */; };
 		9128919C29A3BE3B001659FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9128919B29A3BE3B001659FC /* AppDelegate.swift */; };
 		9128919E29A3BE3B001659FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9128919D29A3BE3B001659FC /* SceneDelegate.swift */; };
 		912891A029A3BE3B001659FC /* ImagesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9128919F29A3BE3B001659FC /* ImagesListViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9125876729D9944400313BFC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9128919829A3BE3B001659FC /* ImageFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9128919B29A3BE3B001659FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9128919D29A3BE3B001659FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				91BFB99B29A3C2D600C32C0E /* ImagesList */,
 				9128919B29A3BE3B001659FC /* AppDelegate.swift */,
 				9128919D29A3BE3B001659FC /* SceneDelegate.swift */,
+				9125876729D9944400313BFC /* Constants.swift */,
 				9147129629BA34050099A0A0 /* Main.storyboard */,
 				912891A429A3BE3D001659FC /* Assets.xcassets */,
 				912891A629A3BE3D001659FC /* LaunchScreen.storyboard */,
@@ -189,6 +192,7 @@
 				9128919C29A3BE3B001659FC /* AppDelegate.swift in Sources */,
 				9128919E29A3BE3B001659FC /* SceneDelegate.swift in Sources */,
 				91BFB99E29A3C2FE00C32C0E /* UIColor + Extesions.swift in Sources */,
+				9125876829D9944400313BFC /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
