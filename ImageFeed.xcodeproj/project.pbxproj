@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		9125876829D9944400313BFC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125876729D9944400313BFC /* Constants.swift */; };
+		9125876A29D9ACF900313BFC /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125876929D9ACF900313BFC /* AuthViewController.swift */; };
+		9125876D29D9AE9500313BFC /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125876C29D9AE9500313BFC /* WebViewViewController.swift */; };
+		9125876F29D9C5A000313BFC /* WebViewViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125876E29D9C59F00313BFC /* WebViewViewControllerDelegate.swift */; };
 		9128919C29A3BE3B001659FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9128919B29A3BE3B001659FC /* AppDelegate.swift */; };
 		9128919E29A3BE3B001659FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9128919D29A3BE3B001659FC /* SceneDelegate.swift */; };
 		912891A029A3BE3B001659FC /* ImagesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9128919F29A3BE3B001659FC /* ImagesListViewController.swift */; };
@@ -22,6 +25,9 @@
 
 /* Begin PBXFileReference section */
 		9125876729D9944400313BFC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9125876929D9ACF900313BFC /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		9125876C29D9AE9500313BFC /* WebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
+		9125876E29D9C59F00313BFC /* WebViewViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewControllerDelegate.swift; sourceTree = "<group>"; };
 		9128919829A3BE3B001659FC /* ImageFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9128919B29A3BE3B001659FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9128919D29A3BE3B001659FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +53,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9125876B29D9AD1500313BFC /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				9125876929D9ACF900313BFC /* AuthViewController.swift */,
+				9125876C29D9AE9500313BFC /* WebViewViewController.swift */,
+				9125876E29D9C59F00313BFC /* WebViewViewControllerDelegate.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		9128918F29A3BE3B001659FC = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +82,7 @@
 		9128919A29A3BE3B001659FC /* ImageFeed */ = {
 			isa = PBXGroup;
 			children = (
+				9125876B29D9AD1500313BFC /* Auth */,
 				91BFB99C29A3C2E600C32C0E /* Helpers */,
 				9147126729B5CC640099A0A0 /* Profile */,
 				9147126C29B612020099A0A0 /* SingleImageView */,
@@ -185,13 +202,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9125876D29D9AE9500313BFC /* WebViewViewController.swift in Sources */,
 				9147126929B5CC9D0099A0A0 /* ProfileViewController.swift in Sources */,
 				912891A029A3BE3B001659FC /* ImagesListViewController.swift in Sources */,
 				91BFB99A29A3C2B700C32C0E /* ImagesListCell.swift in Sources */,
 				9147126B29B5FF0F0099A0A0 /* SingleImageViewController.swift in Sources */,
 				9128919C29A3BE3B001659FC /* AppDelegate.swift in Sources */,
 				9128919E29A3BE3B001659FC /* SceneDelegate.swift in Sources */,
+				9125876F29D9C5A000313BFC /* WebViewViewControllerDelegate.swift in Sources */,
 				91BFB99E29A3C2FE00C32C0E /* UIColor + Extesions.swift in Sources */,
+				9125876A29D9ACF900313BFC /* AuthViewController.swift in Sources */,
 				9125876829D9944400313BFC /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
