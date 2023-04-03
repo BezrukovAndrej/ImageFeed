@@ -22,6 +22,8 @@
 		91B3035829DAF3420002AEFB /* OAuthTokenResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B3035729DAF3420002AEFB /* OAuthTokenResponseBody.swift */; };
 		91B3035B29DAF3C60002AEFB /* OAuth2Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B3035A29DAF3C60002AEFB /* OAuth2Service.swift */; };
 		91B3035D29DAF4D10002AEFB /* OAuth2TokenStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B3035C29DAF4D10002AEFB /* OAuth2TokenStorage.swift */; };
+		91B3036129DAFF910002AEFB /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B3036029DAFF910002AEFB /* SplashViewController.swift */; };
+		91B3036329DB02250002AEFB /* AuthViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B3036229DB02250002AEFB /* AuthViewControllerDelegate.swift */; };
 		91BFB99A29A3C2B700C32C0E /* ImagesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BFB99929A3C2B700C32C0E /* ImagesListCell.swift */; };
 		91BFB99E29A3C2FE00C32C0E /* UIColor + Extesions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BFB99D29A3C2FE00C32C0E /* UIColor + Extesions.swift */; };
 /* End PBXBuildFile section */
@@ -44,6 +46,8 @@
 		91B3035729DAF3420002AEFB /* OAuthTokenResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthTokenResponseBody.swift; sourceTree = "<group>"; };
 		91B3035A29DAF3C60002AEFB /* OAuth2Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2Service.swift; sourceTree = "<group>"; };
 		91B3035C29DAF4D10002AEFB /* OAuth2TokenStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2TokenStorage.swift; sourceTree = "<group>"; };
+		91B3036029DAFF910002AEFB /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		91B3036229DB02250002AEFB /* AuthViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewControllerDelegate.swift; sourceTree = "<group>"; };
 		91BFB99929A3C2B700C32C0E /* ImagesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListCell.swift; sourceTree = "<group>"; };
 		91BFB99D29A3C2FE00C32C0E /* UIColor + Extesions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extesions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				9125876929D9ACF900313BFC /* AuthViewController.swift */,
+				91B3036229DB02250002AEFB /* AuthViewControllerDelegate.swift */,
 				9125876C29D9AE9500313BFC /* WebViewViewController.swift */,
 				9125876E29D9C59F00313BFC /* WebViewViewControllerDelegate.swift */,
 			);
@@ -88,6 +93,7 @@
 		9128919A29A3BE3B001659FC /* ImageFeed */ = {
 			isa = PBXGroup;
 			children = (
+				91B3035F29DAFF870002AEFB /* SplashViewController */,
 				91B3035929DAF3AB0002AEFB /* Services */,
 				91B3035629DAF3350002AEFB /*  Model */,
 				9125876B29D9AD1500313BFC /* Auth */,
@@ -132,10 +138,18 @@
 		91B3035929DAF3AB0002AEFB /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				91B3035A29DAF3C60002AEFB /* OAuth2Service.swift */,
 				91B3035C29DAF4D10002AEFB /* OAuth2TokenStorage.swift */,
+				91B3035A29DAF3C60002AEFB /* OAuth2Service.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		91B3035F29DAFF870002AEFB /* SplashViewController */ = {
+			isa = PBXGroup;
+			children = (
+				91B3036029DAFF910002AEFB /* SplashViewController.swift */,
+			);
+			path = SplashViewController;
 			sourceTree = "<group>";
 		};
 		91BFB99B29A3C2D600C32C0E /* ImagesList */ = {
@@ -236,10 +250,12 @@
 				91B3035D29DAF4D10002AEFB /* OAuth2TokenStorage.swift in Sources */,
 				9147126B29B5FF0F0099A0A0 /* SingleImageViewController.swift in Sources */,
 				9128919C29A3BE3B001659FC /* AppDelegate.swift in Sources */,
+				91B3036129DAFF910002AEFB /* SplashViewController.swift in Sources */,
 				9128919E29A3BE3B001659FC /* SceneDelegate.swift in Sources */,
 				9125876F29D9C5A000313BFC /* WebViewViewControllerDelegate.swift in Sources */,
 				91BFB99E29A3C2FE00C32C0E /* UIColor + Extesions.swift in Sources */,
 				9125876A29D9ACF900313BFC /* AuthViewController.swift in Sources */,
+				91B3036329DB02250002AEFB /* AuthViewControllerDelegate.swift in Sources */,
 				9125876829D9944400313BFC /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

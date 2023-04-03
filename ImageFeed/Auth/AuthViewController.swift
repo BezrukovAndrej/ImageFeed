@@ -1,11 +1,12 @@
 import UIKit
 
 final class AuthViewController: UIViewController {
+    weak var delegate: AuthViewControllerDelegate?
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == DecodingInfo.IB.showWebViewSegueIdentifier {
+        if segue.identifier == DecodingInfo.IB.webViewSegueIdentifier {
             guard let webViewViewController = segue.destination as? WebViewViewController
-            else { fatalError("Failed to prepare for \(DecodingInfo.IB.showWebViewSegueIdentifier)") }
+            else { fatalError("Failed to prepare for \(DecodingInfo.IB.webViewSegueIdentifier)") }
             webViewViewController.delegate = self
         } else {
             super.prepare(for: segue, sender: sender)
@@ -15,9 +16,9 @@ final class AuthViewController: UIViewController {
 
 extension AuthViewController: WebViewViewControllerDelegate {
     func webViewViewController(_ vc: WebViewViewController, didAuthenticateWithCode code: String) {
-        //TODO: process code
+        delegate?.authViewController(self, didAuthenticateWithCode: code)
     }
-
+    
     func webViewViewControllerDidCancel(_ vc: WebViewViewController) {
         dismiss(animated: true)
     }

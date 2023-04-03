@@ -11,6 +11,8 @@ struct DecodingInfo {
     }
     
     struct IB {
-       static let showWebViewSegueIdentifier = "ShowWebView"
+       static let webViewSegueIdentifier = "ShowWebView"
+       static let authViewSegueIdentifier = "ShowAuthenticationScreen"
+       static let tabBarId = "TabBarViewController"
     }
 }
