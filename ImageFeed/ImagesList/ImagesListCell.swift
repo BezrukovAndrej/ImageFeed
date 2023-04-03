@@ -3,7 +3,7 @@ import UIKit
 final class ImagesListCell: UITableViewCell {
     static let reuseIdentifier = "ImagesListCell"
     private let gradientLayer = CAGradientLayer()
-    
+    // MARK: - Outlet 
     @IBOutlet private weak var imageCell: UIImageView!
     @IBOutlet private weak var likeButton: UIButton!
     @IBOutlet private weak var dateLabel: UILabel!
