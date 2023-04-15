@@ -9,6 +9,7 @@ final class ImagesListViewController: UIViewController {
         formatter.timeStyle = .none
         return formatter
     }()
+    
     // MARK: - Outlet
     @IBOutlet private var tableView: UITableView!
     
@@ -33,6 +34,7 @@ final class ImagesListViewController: UIViewController {
         tableView.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
     }
 }
+
     // MARK: - Extension class
 extension ImagesListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -77,4 +79,3 @@ extension ImagesListViewController: UITableViewDelegate {
         return cellHeight
     }
 }
-

@@ -8,6 +8,7 @@ final class SingleImageViewController: UIViewController {
             rescaleAndCenterImageInScrollView(image: image)
         }
     }
+    
     // MARK: - Outlet
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var imageView: UIImageView!
@@ -24,6 +25,7 @@ final class SingleImageViewController: UIViewController {
         scrollView.maximumZoomScale = 1.25
         rescaleAndCenterImageInScrollView(image: image)
     }
+    
     // MARK: - Action func 
     @IBAction private func didTapBackButton() {
         dismiss(animated: true)
@@ -38,6 +40,7 @@ final class SingleImageViewController: UIViewController {
     }
     
 }
+
     // MARK: - Extension class 
 extension SingleImageViewController: UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {

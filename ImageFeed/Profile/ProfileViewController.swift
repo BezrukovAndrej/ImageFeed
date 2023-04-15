@@ -1,6 +1,7 @@
 import UIKit
 
 final class ProfileViewController: UIViewController {
+    
     private var avatarImageView = UIImageView()
     private let descriptionLabel = UILabel()
     private let nicknameLabel = UILabel()
@@ -16,10 +17,12 @@ final class ProfileViewController: UIViewController {
         setupLayout()
         applyStyle()
     }
+    
     // MARK: - Action
     @objc
     private func logoutButtonTapped() {
     }
+    
     // MARK: - Private func
     private func applyStyle() {
         avatarImageView.image = UIImage(named: "Profile_image") ?? UIImage()
@@ -59,12 +62,15 @@ final class ProfileViewController: UIViewController {
             avatarImageView.widthAnchor.constraint(equalToConstant: 70),
             avatarImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             avatarImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 32),
+            
             nameLabel.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: 8),
             nameLabel.leadingAnchor.constraint(equalTo: avatarImageView.leadingAnchor),
             nicknameLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8),
             nicknameLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
+            
             descriptionLabel.topAnchor.constraint(equalTo: nicknameLabel.bottomAnchor, constant: 8),
             descriptionLabel.leadingAnchor.constraint(equalTo: nicknameLabel.leadingAnchor),
+            
             logoutView.centerYAnchor.constraint(equalTo: avatarImageView.centerYAnchor),
             logoutView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
         ])

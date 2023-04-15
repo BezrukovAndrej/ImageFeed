@@ -1,4 +1,5 @@
 import UIKit
+import ProgressHUD
 
 final class SplashViewController: UIViewController {
     private var oAuth2TokenStorage = OAuth2TokenStorage()
@@ -47,17 +48,23 @@ extension SplashViewController: AuthViewControllerDelegate {
         _ vc: AuthViewController,
         didAuthenticateWithCode code: String
     ) {
+        ProgressHUD.show()
         dismiss(animated: true) { [weak self] in
             guard let self = self else { return }
-            self.oAuth2Service.fetchAuthToken(code: code) { result in
-                switch result {
-                case.success(let response):
-                    self.oAuth2TokenStorage.token = response.accessToken
-                    self.switchToTabBarController()
-                case.failure:
-                    
-                    break
-                }
+            self.fetchOAuthToken(code)
+            
+        }
+    }
+    
+    private func fetchOAuthToken(_ code: String) {
+        oAuth2Service.fetchAuthToken(code: code) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case.success(let response):
+                self.oAuth2TokenStorage.token = response.accessToken
+                self.switchToTabBarController()
+            case.failure:
+                ProgressHUD.dismiss()
             }
         }
     }
