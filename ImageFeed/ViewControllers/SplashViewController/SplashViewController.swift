@@ -11,8 +11,9 @@ final class SplashViewController: UIViewController {
     
     private let oauth2Service = OAuth2Service()
     private var oauth2TokenStorage = OAuth2TokenStorage()
+    
     private let profileService = ProfileService.shared
-    private let profileImageService = ProfileImageServices.shared
+    private let profileImageService = ProfileImageService.shared
     
     // MARK: - LifeCycle
     
@@ -63,7 +64,7 @@ extension SplashViewController {
             switch result {
             case .success(let userProfile):
                 UIBlockingProgressHUD.dismiss()
-                self.profileImageService.fetchProfileImageURL(userName: userProfile.userName) { _ in }
+                self.profileImageService.fetchProfileImageURL(username: userProfile.username) { _ in }
                 self.switchToTabBarController()
             case .failure(let error):
                 self.showAlert(with: error)
@@ -84,8 +85,8 @@ extension SplashViewController {
     }
     
     private func layoutLogo() {
-        view.addSubview(logoImageView)
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(logoImageView)
         NSLayoutConstraint.activate([
             logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             logoImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor)

@@ -20,6 +20,10 @@ final class ImagesListViewController: UIViewController {
         return formatter
     }()
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     // MARK: - LifeCycle
     
     override func viewDidLoad() {

@@ -22,12 +22,12 @@ final class ProfileService {
             case .success(let responseBody):
                 self.profile = Profile(from: responseBody)
                 guard let profile = self.profile else {return}
-                completion(.success(profile))
                 self.profile = profile
                 self.task = nil
+                completion(.success(profile))
             case .failure(let error):
-                completion(.failure(error))
                 self.lastToken = nil
+                completion(.failure(error))
                 
             }
         }

@@ -5,7 +5,10 @@ final class ProfileViewController: UIViewController {
     private lazy var avatarImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "Profile_image") ?? UIImage()
-        imageView.layer.cornerRadius = 61
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.layer.masksToBounds = true
+        imageView.layer.cornerRadius = 35
         return imageView
     }()
     
@@ -38,11 +41,16 @@ final class ProfileViewController: UIViewController {
     private let profileService = ProfileService.shared
     private var profileImageServiceObserver: NSObjectProtocol?
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .ypBlack
         addSubviews()
         addConstraints()
         
@@ -50,7 +58,7 @@ final class ProfileViewController: UIViewController {
         
         profileImageServiceObserver = NotificationCenter.default
             .addObserver(
-                forName: ProfileImageServices.didChangeNotification,
+                forName: ProfileImageService.didChangeNotification,
                 object: nil,
                 queue: .main) { [weak self] _ in
                     guard let self = self else { return }
@@ -72,16 +80,11 @@ final class ProfileViewController: UIViewController {
     
     private func updateAvatar() {
         guard
-            let profileImageURL = ProfileImageServices.shared.avatarURL,
+            let profileImageURL = ProfileImageService.shared.avatarURL,
             let url = URL(string: profileImageURL)
         else { return }
-        avatarImageView.kf.setImage(with: url)
         
-        let processor = RoundCornerImageProcessor(cornerRadius: 61)
-        avatarImageView.kf.setImage(
-            with: url,
-            options: [.processor(processor)]
-        )
+        avatarImageView.kf.setImage(with: url)
     }
     
 // MARK: - Supporting method
@@ -105,11 +108,7 @@ private extension ProfileViewController {
             view.addSubview(item)
         }
     }
-}
-
-// MARK: - Set Constraints
-
-extension ProfileViewController {
+    
     func addConstraints() {
         NSLayoutConstraint.activate([
             avatarImageView.heightAnchor.constraint(equalToConstant: 70),

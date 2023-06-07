@@ -1,22 +1,22 @@
 import UIKit
 
-final class ProfileImageServices {
+final class ProfileImageService {
     private var task: URLSessionTask?
     private var lastUsername: String?
     
-    static let shared = ProfileImageServices()
+    static let shared = ProfileImageService()
     private init() {}
     private(set) var avatarURL: String?
     
     static let didChangeNotification = Notification.Name(rawValue: "ProfileImageProviderDidChange")
     
-    func fetchProfileImageURL(userName: String, _ completion: @escaping (Result<String, Error>) -> Void) {
+    func fetchProfileImageURL(username: String, _ completion: @escaping (Result<String, Error>) -> Void) {
         assert(Thread.isMainThread)
-        if lastUsername == userName { return }
+        if lastUsername == username { return }
         task?.cancel()
-        lastUsername = userName
+        lastUsername = username
         
-        let request = makeRequest(userName)
+        let request = makeRequest(username)
         
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -30,7 +30,7 @@ final class ProfileImageServices {
                 completion(.success(profileImageURL))
                 NotificationCenter.default
                     .post(
-                        name: ProfileImageServices.didChangeNotification,
+                        name: ProfileImageService.didChangeNotification,
                         object: self,
                         userInfo: ["URL": profileImageURL])
                 

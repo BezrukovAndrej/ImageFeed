@@ -209,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				91D86CA629F954CF00992F7A /* OAuthToken */,
+				916227BD29FA735800023AB8 /* Profile */,
 			);
 			path = " Model";
 			sourceTree = "<group>";
@@ -263,7 +264,6 @@
 			isa = PBXGroup;
 			children = (
 				91B3035729DAF3420002AEFB /* OAuthTokenResponseBody.swift */,
-				916227BD29FA735800023AB8 /* Profile */,
 			);
 			path = OAuthToken;
 			sourceTree = "<group>";
