@@ -19,7 +19,7 @@ final class WebViewViewController: UIViewController {
     private lazy var progressView: UIProgressView = {
         let progressView = UIProgressView()
         progressView.progressViewStyle = .default
-        progressView.progressTintColor = .ypBlack
+        progressView.progressTintColor = .ypBackground
         return progressView
     }()
     

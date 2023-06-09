@@ -181,8 +181,8 @@
 		916227BD29FA735800023AB8 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				916227BE29FA737200023AB8 /* ProfileResult.swift */,
 				916227C029FA739A00023AB8 /* Profile.swift */,
+				916227BE29FA737200023AB8 /* ProfileResult.swift */,
 				916227C229FA73FD00023AB8 /* UserResult.swift */,
 			);
 			path = Profile;

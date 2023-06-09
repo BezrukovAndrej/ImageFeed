@@ -1,10 +1,10 @@
 import UIKit
 
-final class ProfileImageServices {
+final class ProfileImageService {
     private var task: URLSessionTask?
     private var lastUsername: String?
     
-    static let shared = ProfileImageServices()
+    static let shared = ProfileImageService()
     private init() {}
     private(set) var avatarURL: String?
     
@@ -30,7 +30,7 @@ final class ProfileImageServices {
                 completion(.success(profileImageURL))
                 NotificationCenter.default
                     .post(
-                        name: ProfileImageServices.didChangeNotification,
+                        name: ProfileImageService.didChangeNotification,
                         object: self,
                         userInfo: ["URL": profileImageURL])
                 

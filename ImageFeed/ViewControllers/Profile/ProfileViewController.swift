@@ -3,11 +3,14 @@ import Kingfisher
 
 final class ProfileViewController: UIViewController {
     private lazy var avatarImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "Profile_image") ?? UIImage()
-        imageView.layer.cornerRadius = 61
-        return imageView
-    }()
+            let imageView = UIImageView()
+            imageView.image = UIImage(named: "Profile_image") ?? UIImage()
+            imageView.contentMode = .scaleAspectFill
+            imageView.clipsToBounds = true
+            imageView.layer.masksToBounds = true
+            imageView.layer.cornerRadius = 35
+            return imageView
+        }()
     
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
@@ -43,6 +46,7 @@ final class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .ypBlack
         addSubviews()
         addConstraints()
         
@@ -50,7 +54,7 @@ final class ProfileViewController: UIViewController {
         
         profileImageServiceObserver = NotificationCenter.default
             .addObserver(
-                forName: ProfileImageServices.didChangeNotification,
+                forName: ProfileImageService.didChangeNotification,
                 object: nil,
                 queue: .main) { [weak self] _ in
                     guard let self = self else { return }
@@ -72,7 +76,7 @@ final class ProfileViewController: UIViewController {
     
     private func updateAvatar() {
         guard
-            let profileImageURL = ProfileImageServices.shared.avatarURL,
+            let profileImageURL = ProfileImageService.shared.avatarURL,
             let url = URL(string: profileImageURL)
         else { return }
         avatarImageView.kf.setImage(with: url)
