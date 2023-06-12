@@ -1,4 +1,3 @@
-
 import UIKit
 
 extension UIView {
@@ -39,4 +38,3 @@ extension UIView {
         gradientLayer.removeFromSuperlayer()
     }
 }
-

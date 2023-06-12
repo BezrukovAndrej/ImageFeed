@@ -6,4 +6,3 @@ struct ProfileResult: Codable {
     let lastName: String?
     let bio: String?
 }
-
