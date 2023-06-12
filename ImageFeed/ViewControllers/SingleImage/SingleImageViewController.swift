@@ -30,7 +30,7 @@ final class SingleImageViewController: UIViewController {
         return button
     }()
     
-    var image = UIImage()
+    var fullImageUrl: String?
 
     // MARK: - LifeCycle
     
@@ -38,6 +38,7 @@ final class SingleImageViewController: UIViewController {
         super.viewDidLoad()
         
         scrollView.delegate = self
+        setImage()
         addSubviews()
         addViewConstraints()
         createViews()
@@ -48,11 +49,47 @@ final class SingleImageViewController: UIViewController {
     }
     
     @objc private func didTapShareButton() {
+        guard let image = imageView.image else { return }
         let share = UIActivityViewController(
             activityItems: [image],
             applicationActivities: nil
         )
         present(share, animated: true)
+    }
+    
+    private func setImage() {
+        UIBlockingProgressHUD.show()
+        guard let urlString = fullImageUrl else { return }
+        let url = URL(string: urlString)
+        DispatchQueue.main.async {
+            self.imageView.kf.setImage(with: url) { [weak self] result in
+                UIBlockingProgressHUD.dismiss()
+                guard let self = self else { return }
+                switch result {
+                case .success(let imageResult):
+                    self.rescaleAndCenterImageInScrollView(image: imageResult.image)
+                case .failure(let error):
+                    self.showError(with: error)
+                }
+            }
+        }
+    }
+    
+    private func showError(with error: Error) {
+        let alert = UIAlertController(
+            title: "Что-то пошло не так.",
+            message: "Ошибка - \(error). Попробовать еще раз?",
+            preferredStyle: .alert
+        )
+        let cancelAction = UIAlertAction(title: "Не надо", style: .cancel)
+        let repeatAction = UIAlertAction(title: "Повторить", style: .default) { [weak self] _ in
+            self?.setImage()
+        }
+        [cancelAction, repeatAction].forEach { item in
+            alert.addAction(item)
+        }
+        alert.overrideUserInterfaceStyle = UIUserInterfaceStyle.light
+        self.present(alert, animated: true)
     }
     
     private func rescaleAndCenterImageInScrollView(image: UIImage) {
@@ -76,8 +113,6 @@ final class SingleImageViewController: UIViewController {
 private extension SingleImageViewController {
     func createViews() {
         view.backgroundColor = .ypBlack
-        imageView.image = image
-        rescaleAndCenterImageInScrollView(image: image)
     }
     
     func addSubviews() {

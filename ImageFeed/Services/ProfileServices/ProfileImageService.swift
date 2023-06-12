@@ -3,6 +3,7 @@ import UIKit
 final class ProfileImageService {
     private var task: URLSessionTask?
     private var lastUsername: String?
+    private let oAuth2TokenStorage = OAuth2TokenStorage.shared
     
     static let shared = ProfileImageService()
     private init() {}
@@ -10,13 +11,13 @@ final class ProfileImageService {
     
     static let didChangeNotification = Notification.Name(rawValue: "ProfileImageProviderDidChange")
     
-    func fetchProfileImageURL(userName: String, _ completion: @escaping (Result<String, Error>) -> Void) {
+    func fetchProfileImageURL(username: String, _ completion: @escaping (Result<String, Error>) -> Void) {
         assert(Thread.isMainThread)
-        if lastUsername == userName { return }
+        if lastUsername == username { return }
         task?.cancel()
-        lastUsername = userName
+        lastUsername = username
         
-        let request = makeRequest(userName)
+        let request = makeRequest(username)
         
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -49,7 +50,7 @@ final class ProfileImageService {
         urlComponents?.path = "/users/\(username)"
         guard let url = urlComponents?.url else { fatalError("Failed to create URL") }
         var request = URLRequest(url: url)
-        guard let token = OAuth2TokenStorage().token else { fatalError("Failed to create token") }
+        guard let token = oAuth2TokenStorage.token else { fatalError("Failed to create token") }
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         return request
     }
