@@ -32,7 +32,12 @@ final class AuthViewController: UIViewController {
     }
     
     @objc private func didTaploginButton() {
+        let authHelper = AuthHelper()
         let webViewViewController = WebViewViewController()
+        let webViewPresenter = WebViewPresenter(authHelper: authHelper)
+        
+        webViewViewController.presenter = webViewPresenter
+        webViewPresenter.view = webViewViewController
         webViewViewController.delegate = self
         
         webViewViewController.modalPresentationStyle = .fullScreen
