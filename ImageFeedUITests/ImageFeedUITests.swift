@@ -41,62 +41,30 @@ final class ImageFeedUITests: XCTestCase {
     }
     
     func testFeed() throws {
-//        sleep(5)
-//        let tablesQuery = app.tables
-//        let cell = tablesQuery.children(matching: .cell).element(boundBy: 0)
-//        cell.swipeUp()
-//
-//        sleep(5)
-//
-//        let cellToLike = tablesQuery.children(matching: .cell).element(boundBy: 2)
-//        sleep(3)
-//
-//        cellToLike.buttons["likeButton"].tap()
-//        sleep(3)
-//
-//        cellToLike.buttons["likeButton"].tap()
-//
-//        sleep(5)
-//
-//        cellToLike.tap()
-//
-//        sleep(5)
-//
-//        let image = app.scrollViews.images.element(boundBy: 0)
-//        image.pinch(withScale: 3, velocity: 1)
-//        image.pinch(withScale: 0.5, velocity: -1)
-//
-//        let navBackButtonWhiteButton = app.buttons["navBackButton"]
-//        navBackButtonWhiteButton.tap()
         sleep(5)
         let tablesQuery = app.tables
         let cell = tablesQuery.children(matching: .cell).element(boundBy: 0)
-
-        sleep(3)
-
-        tablesQuery.element.swipeUp()
-        tablesQuery.element.swipeDown()
-
-        let firstCell = tablesQuery.cells.element(boundBy: 0)
-        let likeButton = firstCell.buttons["likeButton"]
-        likeButton.tap()
-        sleep(3)
-
-        likeButton.tap()
-        sleep(3)
-
-        firstCell.tap()
+        cell.swipeUp()
+        
         sleep(5)
-
+        
+        let cellToLike = tablesQuery.children(matching: .cell).element(boundBy: 1)
+        
+        cellToLike.buttons["likeButton"].tap()
+        cellToLike.buttons["likeButton"].tap()
+        
+        sleep(5)
+        
+        cellToLike.tap()
+        
+        sleep(5)
+        
         let image = app.scrollViews.images.element(boundBy: 0)
         image.pinch(withScale: 3, velocity: 1)
-        sleep(3)
-
         image.pinch(withScale: 0.5, velocity: -1)
-        sleep(3)
-
-        app.buttons["navBackButton"].tap()
-        sleep(3)
+        
+        let navBackButtonWhiteButton = app.buttons["navBackButton"]
+        navBackButtonWhiteButton.tap()
     }
     
     func testProfile() throws {
