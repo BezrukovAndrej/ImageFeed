@@ -1,7 +1,7 @@
 import Foundation
 
-let AccessKey = "JJ8eMw9mODPvSAhwi44jkw9QZoP2Jc-ZvyrcwnBtfHk"
-let SecretKey = "mKK1UATME8SQXLGFqDvPzX65azBUhFSx14qQ0sJuJgE"
+let AccessKey = "oiafulFY5Ta5sGz8hagfaxNbF9n3cthuUbnpWwwOy9w"
+let SecretKey = "vgfqMhFxkXdADReelLnTN7jHSTgnLpt-sctKE-coEZs"
 let RedirectURI = "urn:ietf:wg:oauth:2.0:oob"
 let AccessScope = "public+read_user+write_likes"
 

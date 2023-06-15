@@ -1,6 +1,5 @@
 import UIKit
 import Kingfisher
-import ProgressHUD
 
 public protocol ImagesListViewControllerProtocol: AnyObject {
     var presenter: ImagesListPresenterProtocol? { get set }

@@ -2,8 +2,8 @@ import UIKit
 
 struct DecodingInfo {
     struct API {
-       static let accessKey = "JJ8eMw9mODPvSAhwi44jkw9QZoP2Jc-ZvyrcwnBtfHk"
-       static let secretKey = "mKK1UATME8SQXLGFqDvPzX65azBUhFSx14qQ0sJuJgE"
+       static let accessKey = "oiafulFY5Ta5sGz8hagfaxNbF9n3cthuUbnpWwwOy9w"
+       static let secretKey = "vgfqMhFxkXdADReelLnTN7jHSTgnLpt-sctKE-coEZs"
        static let redirectURI = "urn:ietf:wg:oauth:2.0:oob"
        static let accessScope = "public+read_user+write_likes"
        static let defaultBaseURL = "https://api.unsplash.com"

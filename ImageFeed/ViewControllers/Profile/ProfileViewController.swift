@@ -15,6 +15,8 @@ final class ProfileViewController: UIViewController & ProfileViewControllerProto
             let imageView = UIImageView()
             imageView.image = UIImage(named: "Profile_image") ?? UIImage()
             imageView.contentMode = .scaleAspectFill
+            imageView.backgroundColor = .ypWhite
+            imageView.tintColor = .ypGray
             imageView.clipsToBounds = true
             imageView.layer.masksToBounds = true
             imageView.layer.cornerRadius = 35

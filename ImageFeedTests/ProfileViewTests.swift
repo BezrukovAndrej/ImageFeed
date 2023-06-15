@@ -3,7 +3,7 @@ import XCTest
 
 final class ProfileViewPresenterSpy: ProfilePresenterProtocol {
     var view: ProfileViewControllerProtocol?
-    var viewDidLoadCalled: Bool = false
+    var viewDidLoadCalled: Bool = true
     var logOutButtonWasTapped: Bool = false
     
     func viewDidLoad() {
