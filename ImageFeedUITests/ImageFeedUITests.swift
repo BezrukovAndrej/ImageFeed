@@ -20,7 +20,7 @@ final class ImageFeedUITests: XCTestCase {
         XCTAssertTrue(loginTextField.waitForExistence(timeout: 5))
         
         loginTextField.tap()
-        loginTextField.typeText("НАПИШИ СВОЙ ЭМАЙЛ")
+        loginTextField.typeText("НАПИШИ СВОЙ ЭМАЙЛ !!! ")
         webView.swipeUp()
         app.toolbars["Toolbar"].buttons["Done"].tap()
         
@@ -28,7 +28,7 @@ final class ImageFeedUITests: XCTestCase {
         XCTAssertTrue(passwordTextField.waitForExistence(timeout: 5))
         
         passwordTextField.tap()
-        passwordTextField.typeText("ПАРОЛЬ НАПИШИ! ")
+        passwordTextField.typeText("НАПИШИ СВОЙ ПАРОЛЬ!!! ")
         webView.swipeUp()
         app.toolbars["Toolbar"].buttons["Done"].tap()
         
@@ -41,25 +41,25 @@ final class ImageFeedUITests: XCTestCase {
     }
     
     func testFeed() throws {
+        sleep(5)
         let tablesQuery = app.tables
-        sleep(2)
-        
         let cell = tablesQuery.children(matching: .cell).element(boundBy: 0)
         cell.swipeUp()
         
-        sleep(2)
+        sleep(5)
         
-        let cellToLike = tablesQuery.children(matching: .cell).element(boundBy: 1)
+        let cellToLike = tablesQuery.children(matching: .cell).element(boundBy: 2)
+        
         cellToLike.buttons["likeButton"].tap()
-        sleep(2)
         cellToLike.buttons["likeButton"].tap()
         
-        sleep(2)
+        sleep(5)
+        
         cellToLike.tap()
-        sleep(2)
+        
+        sleep(5)
         
         let image = app.scrollViews.images.element(boundBy: 0)
-        
         image.pinch(withScale: 3, velocity: 1)
         image.pinch(withScale: 0.5, velocity: -1)
         
