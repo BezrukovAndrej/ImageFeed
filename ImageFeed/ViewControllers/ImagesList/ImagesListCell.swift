@@ -6,7 +6,6 @@ protocol ImagesListCellDelegate: AnyObject {
 }
 
 final class ImagesListCell: UITableViewCell {
-    
     enum FeedCellImageState {
         case loading
         case error

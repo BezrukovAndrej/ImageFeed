@@ -102,7 +102,8 @@ extension ImagesListViewController: UITableViewDataSource {
         guard let imageListCell = cell as? ImagesListCell else { return UITableViewCell() }
         imageListCell.delegate = self
         configCell(for: imageListCell, with: indexPath)
-        
+        imageListCell.isAccessibilityElement = true
+        tableView.isAccessibilityElement = true
         return imageListCell
     }
     
