@@ -53,11 +53,7 @@ final class ImageFeedUITests: XCTestCase {
         cellToLike.buttons["likeButton"].tap()
         cellToLike.buttons["likeButton"].tap()
         
-        //sleep(5)
-        
         cellToLike.tap()
-        
-        //sleep(5)
         
         let image = app.scrollViews.images.element(boundBy: 0)
         image.pinch(withScale: 3, velocity: 1)
