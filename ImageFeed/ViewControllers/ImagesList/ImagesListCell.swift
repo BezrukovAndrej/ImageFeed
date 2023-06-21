@@ -6,7 +6,6 @@ protocol ImagesListCellDelegate: AnyObject {
 }
 
 final class ImagesListCell: UITableViewCell {
-    
     enum FeedCellImageState {
         case loading
         case error
@@ -27,6 +26,7 @@ final class ImagesListCell: UITableViewCell {
     private lazy var likeButton: UIButton = {
         let button = UIButton()
         button.addTarget(self, action: #selector(likeButtonClicked), for: .touchUpInside)
+        button.accessibilityIdentifier = "likeButton"
         return button
     }()
     

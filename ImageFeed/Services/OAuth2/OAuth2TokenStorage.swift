@@ -6,7 +6,7 @@ final class OAuth2TokenStorage {
     private init() {}
     
     private let storage = KeychainWrapper.standard
-    private let keyStorage = "bearer"
+    private let keyStorage = "bearer14"
     
     var token: String? {
         get {

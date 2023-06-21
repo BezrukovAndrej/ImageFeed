@@ -1,8 +1,13 @@
 import UIKit
 import Kingfisher
-import ProgressHUD
 
-final class ImagesListViewController: UIViewController {
+public protocol ImagesListViewControllerProtocol: AnyObject {
+    var presenter: ImagesListPresenterProtocol? { get set }
+    func updateTableViewAnimated()
+}
+
+final class ImagesListViewController: UIViewController & ImagesListViewControllerProtocol {
+    var presenter: ImagesListPresenterProtocol?
     
     private var photos: [Photo] = []
     private let imagesListService = ImagesListService.shared
@@ -37,7 +42,7 @@ final class ImagesListViewController: UIViewController {
         createViews()
         UIBlockingProgressHUD.show()
         imagesListService.fetchPhotosNextPage()
-        addNotificationObserver()
+        presenter?.viewDidLoad()
     }
     
     func updateTableViewAnimated() {
@@ -53,18 +58,6 @@ final class ImagesListViewController: UIViewController {
                 tableView.insertRows(at: indexPaths, with: .automatic)
             }
         }
-    }
-    
-    func addNotificationObserver() {
-        imagesListServiceObserver = NotificationCenter.default
-            .addObserver(
-                forName: ImagesListService.didChangeNotification,
-                object: nil,
-                queue: .main
-            ) { [weak self] _ in
-                UIBlockingProgressHUD.dismiss()
-                self?.updateTableViewAnimated()
-            }
     }
 }
 
@@ -109,7 +102,8 @@ extension ImagesListViewController: UITableViewDataSource {
         guard let imageListCell = cell as? ImagesListCell else { return UITableViewCell() }
         imageListCell.delegate = self
         configCell(for: imageListCell, with: indexPath)
-        
+        imageListCell.isAccessibilityElement = true
+        tableView.isAccessibilityElement = true
         return imageListCell
     }
     
@@ -119,7 +113,6 @@ extension ImagesListViewController: UITableViewDataSource {
         if let dateString = photo.createdAt {
             formattedDate = dateFormatter.string(from: dateString)
         }
-        
         
         cell.backgroundColor = .ypBlack
         cell.selectionStyle = .none
