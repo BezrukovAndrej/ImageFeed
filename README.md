@@ -115,7 +115,7 @@
 
 # Технические требования
 
-1.Авторизация работает через OAuth Unsplash и POST запрос для получения Auth Token.
-2.Лента реализована с помощью UITableView.
-3.В приложении использованы UImageView, UIButton, UILabel, TabBarController, NavigationController, NavigationBar, UITableView, UITableViewCell.
-4.Приложение должно поддерживать устройства iPhone с iOS 13 или выше, предусмотрен только портретный режим.
+1. Авторизация работает через OAuth Unsplash и POST запрос для получения Auth Token.
+2. Лента реализована с помощью UITableView.
+3. В приложении использованы UImageView, UIButton, UILabel, TabBarController, NavigationController, NavigationBar, UITableView, UITableViewCell.
+4. Приложение должно поддерживать устройства iPhone с iOS 13 или выше, предусмотрен только портретный режим.
