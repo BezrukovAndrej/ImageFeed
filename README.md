@@ -1,6 +1,9 @@
 ## ImageFeed
 Приложение для просмотра бесконечной ленты картинок из Unsplash API
 
+## Скриншот
+<a href="https://ibb.co/WnXjsGW"><img src="https://i.ibb.co/y0C7Vdn/Group-247.jpg" alt="Group-247" border="0"></a>
+
 ## GIF
 <a href="https://ibb.co/7pTBfWv"><img src="https://i.ibb.co/s1Dcfwj/Simulator-Screen-Recording-i-Phone-14-2023-07-14-at-14-28-07.gif" alt="Simulator-Screen-Recording-i-Phone-14-2023-07-14-at-14-28-07" border="0"></a><br /><a target='_blank' href='https://ru.imgbb.com/'>
 
