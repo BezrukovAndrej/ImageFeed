@@ -4,6 +4,11 @@
 ## GIF
 <a href="https://ibb.co/7pTBfWv"><img src="https://i.ibb.co/s1Dcfwj/Simulator-Screen-Recording-i-Phone-14-2023-07-14-at-14-28-07.gif" alt="Simulator-Screen-Recording-i-Phone-14-2023-07-14-at-14-28-07" border="0"></a><br /><a target='_blank' href='https://ru.imgbb.com/'>
 
+
+## Ссылки
+[Дизайн в Figma](https://www.figma.com/file/HyDfKh5UVPOhPZIhBqIm3q/Image-Feed-(YP)?type=design&node-id=334-4892&mode=design&t=nr8allNHWRkObZei-0)
+[Unsplash API](https://unsplash.com/documentation)
+
 ## Назначение и цели приложения
 Многостраничное приложение предназначено для просмотра изображений через API Unsplash.
 Цели приложения:
