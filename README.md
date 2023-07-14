@@ -1,7 +1,8 @@
 ## ImageFeed
 Приложение для просмотра бесконечной ленты картинок из Unsplash API
 
-## Ссылки
+## GIF
+<a href="https://ibb.co/7pTBfWv"><img src="https://i.ibb.co/s1Dcfwj/Simulator-Screen-Recording-i-Phone-14-2023-07-14-at-14-28-07.gif" alt="Simulator-Screen-Recording-i-Phone-14-2023-07-14-at-14-28-07" border="0"></a><br /><a target='_blank' href='https://ru.imgbb.com/'>редактировать jpg онлайн</a><br />
 
 ## Назначение и цели приложения
 Многостраничное приложение предназначено для просмотра изображений через API Unsplash.
