@@ -7,6 +7,7 @@
 
 ## Ссылки
 [Дизайн в Figma](https://www.figma.com/file/HyDfKh5UVPOhPZIhBqIm3q/Image-Feed-(YP)?type=design&node-id=334-4892&mode=design&t=nr8allNHWRkObZei-0)
+
 [Unsplash API](https://unsplash.com/documentation)
 
 ## Назначение и цели приложения
